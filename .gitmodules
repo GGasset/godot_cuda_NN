@@ -1,0 +1,3 @@
+[submodule "CudNN"]
+	path = CudNN
+	url = https://github.com/GGasset/CudNN.git
