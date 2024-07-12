@@ -1,4 +1,4 @@
-#include "GDNN_constructor.cpp"
+#include "GDNN_constructor.h"
 #include <godot_cpp/core/class_db.hpp>
 
 using namespace godot;
