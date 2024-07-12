@@ -1,2 +1,4 @@
 
 build/[^t]
+*.swp
+src/*.swp
