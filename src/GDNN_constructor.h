@@ -4,7 +4,6 @@
 #include "GDNN.h"
 
 #include "NN_constructor.h"
-#include "NN.h"
 
 namespace godot {
 	class GDNN_constructor : public Object
@@ -19,7 +18,7 @@ namespace godot {
 
 	public:
 		GDNN_constructor();
-		GDNN_constructor append_layer(NN::ConnectionTypes connections, NN::NeuronTypes neurons, size_t neuron_count, ActivationFunctions activation = ActivationFunctions::sigmoid);
-		GDNN construct(size_t input_length, bool stateful = true);
+		GDNN_constructor* append_layer(size_t connections, size_t neurons, size_t neuron_count, size_t activation);
+		GDNN* construct(size_t input_length, bool stateful = true);
 	};
 }

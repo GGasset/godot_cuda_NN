@@ -14,12 +14,13 @@ GDNN_constructor::GDNN_constructor()
 	constructor = NN_constructor();
 }
 
-GDNN_constructor GDNN_constructor::append_layer(NN::ConnectionTypes connections, NN::NeuronTypes neurons, size_t neuron_count, ActivationFunctions activation)
+GDNN_constructor*  GDNN_constructor::append_layer(size_t connections, size_t neurons, size_t neuron_count, size_t activation)
 {
-	constructor.append_layer(connections, neurons, neuron_count, activation);
+	constructor.append_layer((NN::ConnectionTypes)connections, (NN::NeuronTypes)neurons, neuron_count, (ActivationFunctions)activation);
+	return this;
 }
 
-GDNN GDNN_constructor::construct(size_t input_length, bool stateful)
+GDNN* GDNN_constructor::construct(size_t input_length, bool stateful)
 {
-	return GDNN(constructor.construct(input_length, stateful));
+	return new GDNN(constructor.construct(input_length, stateful));
 }
